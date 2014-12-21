@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <title>smurphr</title>
+
+
+    <!-- jQueryMobileCSS - original without styling -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+        
+	<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<!-- nativeDroid core CSS -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+	<!-- nativeDroid: Light/Dark -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+	<!-- nativeDroid: Color Schemes -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.blue.css" id='jQMnDColor' />        
+        
+    <!-- Load the library and CSS references for ArcGIS API for JavaScript -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css" type="text/css" />
+
+    <link  rel="stylesheet" href="css/index.css" type="text/css" />
+
+	<!-- jQuery / jQueryMobile Scripts -->
+    <script src="js/jquery.mobile-1.4.5.js" type="application/javascript"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js" type="application/javascript"></script>
+
+    <script src="js/nativedroid.script.js" type="text/javascript"></script>        
+        
+    </head>
+    
+<body>
+    <div data-role="page" data-theme='b'>
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='fa fa-bars'></i></a>
+            <h1>Listviews</h1>
+        </div>
+        
+        <div data-role="content">   
+        
+          <ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+            <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+            <li><a href="index.php">
+                <img src="http://www.placehold.it/150x150">
+                <h2>Stephen Weber</h2>
+                <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+            </a></li>
+            <li><a href="index.php">
+                <img src="http://www.placehold.it/150x150">
+                <h2>jQuery Team</h2>
+                <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+            </a></li>
+            <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+            <li><a href="index.php">
+                <img src="http://www.placehold.it/150x150">
+                <h2>Avery Walker</h2>
+                <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+            </a></li>
+        </ul>
+        
+          <ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+            <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+            <li>
+                <img src="http://www.placehold.it/150x150">
+                <h2>No link overall</h2>
+                <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+            </li>
+            <li>
+                <img src="http://www.placehold.it/150x150">
+                <h2><a href='#'>Linked Title</a></h2>
+                <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+            </li>
+            <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+            <li>
+                <h2>No Link No image</h2>
+                <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+            </li>
+        </ul>
+	        
+	        <div class='inset'>
+	        	<h2>Code</h2>
+				<div class='message info'>
+					<i class='fa fa-info'></i>
+					<p>We refer to the official jQueryMobile api. <a href='http://api.jquerymobile.com/listview/' target='_blank'>api.jquerymobile.com/listview</a></p>
+				</div>
+	        </div>
+	        
+        </div>
+
+    </div>
+    
+//here
+
+<!--    
+    
+<div data-role="page" id="page">
+	<div data-role="header" align="center">
+    <img src="img/smurphr.png">
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#timers">set timers</a></li>
+            <li><a href="#status">set status</a></li>
+			<li><a href="#meeting">meetings</a></li>
+			<li><a href="#map">map</a></li>
+		</ul>		
+	</div>
+	<div id="footer" data-role="footer" align="center">
+    <img src="img/papa-smurf-icon.png" >	
+	</div>
+</div>
+
+<div data-role="page" id="timers">
+	<div data-role="header">
+		<h1>timers</h1>
+	</div>
+	<div data-role="content">
+	  <div data-role="fieldcontain">
+	    <label for="slider">Time:</label>
+	    <input type="range" name="slider" id="slider" value="0" min="0" max="100" />
+      </div>	
+      <div data-role="fieldcontain">
+	    <label for="slider">Distance:</label>
+	    <input type="range" name="slider" id="slider" value="0" min="0" max="100" />
+      </div>	
+
+
+  </div>
+	<div id="footer" data-role="footer" align="center">
+		<a href="#page"><img src="img/smurf-house-icon.png"></a>
+	</div>
+</div>
+
+<div data-role="page" id="status">
+	<div data-role="header">
+		<h1>status</h1>
+	</div>
+	<div data-role="content">	
+		Content		
+	</div>
+	<div id="footer" data-role="footer" align="center">
+		<a href="#page"><img src="img/smurf-house-icon.png"></a>
+	</div>
+</div>
+
+<div data-role="page" id="meeting">
+	<div data-role="header">
+		<h1>meeting</h1>
+	</div>
+	<div data-role="content">	
+		Content		
+	</div>
+	<div id="footer" data-role="footer" align="center">
+		<a href="#page"><img src="img/smurf-house-icon.png"></a>
+	</div>
+</div>
+
+<div data-role="page" id="map">
+	<div data-role="header">
+		<h1>map</h1>
+	</div>
+
+<div id="mapLayer"></div>      
+    
+	<div id="footer" data-role="footer" align="center">
+		<a href="#page"><img src="img/smurf-house-icon.png"></a>
+	</div>
+</div>
+
+//-->
+
+    
+<script type="text/javascript" src="http://js.arcgis.com/3.8compact"></script>   
+    
+<script>
+    var app = {
+            // Application Constructor
+            initialize: function() {
+                this.bindEvents();
+            },
+            // Bind Event Listeners
+            //
+            // Bind any events that are required on startup. Common events are:
+            // 'load', 'deviceready', 'offline', and 'online'.
+            bindEvents: function() {
+                document.addEventListener('deviceready', this.onDeviceReady, false);
+            },
+            // deviceready Event Handler
+            //
+            // The scope of 'this' is the event. In order to call the 'receivedEvent'
+            // function, we must explicity call 'app.receivedEvent(...);'
+            onDeviceReady: function() {
+                app.receivedEvent('deviceready');
+            },
+            // Update DOM on a Received Event
+            receivedEvent: function(id) {  
+                console.log('Received Event: ' + id);
+                //mapInit();
+            }
+    };
+
+    var mapInit = function(){
+        console.log("Loading Map...");
+        require(["esri/map","esri/symbols/PictureMarkerSymbol","esri/graphic",
+            "esri/SpatialReference","esri/geometry/Point","dojo/on","dojo/domReady!"],
+            function(Map,PictureMarkerSymbol,Graphic,SpatialReference,Point,on) {
+                // Create map
+                var map = new Map("mapLayer",{
+                    basemap: "streets",
+                    center: [51.42, -0.16],
+                    zoom: 3
+                });
+                    
+                    // Wait until map has loaded before starting geolocation
+                    map.on("load",startGeolocation);                                        
+                    
+                    // Create the marker symbol
+                    var markerSymbol = new PictureMarkerSymbol({
+                        "angle":0,
+                        "xoffset":0,
+                        "yoffset":0,
+                        "type":"esriPMS",
+                        "url":"img/smurf-icon.png",
+                        "width":35,
+                        "height":35
+                    })
+
+                    function startGeolocation(){                                                         
+                        console.log("Starting geolocation...");
+                        navigator.geolocation.getCurrentPosition(locationSuccess,locationError,{setHighAccuracy:true});
+                    }
+                
+                    // Handle location success
+                    function locationSuccess(position){
+                        if(position.coords.latitude != null || position.coords.longitude != null){
+                            console.log("long: " + position.coords.longitude + ", lat: " + position.coords.latitude);
+                            var wgsPt = new Point(position.coords.longitude,position.coords.latitude, new SpatialReference({wkid:4326})); 
+                            map.graphics.add(new Graphic(wgsPt, markerSymbol));
+                            map.centerAndZoom(wgsPt, 12);
+                        }
+                    }
+                
+                    function locationError(err){
+                        console.log("locationError: " + err.toString());
+                    }
+                });       
+        }
+        
+        app.initialize();        
+    </script>       
+</body>    
+    
+</html>
