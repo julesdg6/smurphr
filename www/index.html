@@ -62,7 +62,7 @@
                 <h2>Meeting Requests</h2>
                 <p>let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
             </a></li>
-            <li>
+          <li>
                 <img src="img/gargamel-icon-r.png">
                 <h2>No link overall</h2>
                 <p>no details</p>
@@ -81,15 +81,12 @@
 
     </div>  
 
-    <div data-role="page" id="mapPage" data-theme='b'>
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+    <div data-role="page" id="mapPage" >
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
                  <img align="center" src="img/smurphr.png">
         </div>    
- 
-    <div id="map"></div>        
-
     </div>
-    
+            
 <script>
     var app = {
             // Application Constructor
@@ -130,28 +127,28 @@
             iconUrl:"img/smurf-icon.png"
         })
         
-        var map = L.map('map');
+        var map = L.map('mapPage');
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
         map.on('locationerror', onLocationError);
         map.on('locationfound', onLocationFound);
         map.locate({setView: true, maxZoom:14});      
     
-    }
+    };
     
     function onLocationFound(e) 
     {
         L.marker(e.latlng, {icon:marker_smurph}).addTo(map);
         L.circle(e.latlng, 1000,{color: "blue", weight: 8,fillColor:"blue", fillOpacity: 0.1}).addTo(map);
-    }
+    };
 
     function onLocationError(e) 
     {
             alert("Unable to find your location. You may need to enable Geolocation.");
-    }
-    
-    mapInit();
+    };
+
     app.initialize();
+    mapInit();
 </script>        
         
 </body>    
