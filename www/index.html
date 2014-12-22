@@ -84,7 +84,7 @@
     <div data-role="page" id="mapPage" >
         <div data-role="header" data-position="fixed" data-tap-toggle="false">
                  <img align="center" src="img/smurphr.png">
-        </div>    
+        </div>
     </div>
             
 <script>
@@ -127,8 +127,12 @@
             iconUrl:"img/smurf-icon.png"
         })
         
-        var map = L.map('mapPage');
+        var map = L.map('mapPage',{ 
+                       'zoomControl':false,
+        });
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+        
+        map.addControl(L.control.zoom({position: 'bottomright'}));
 
         map.on('locationerror', onLocationError);
         map.on('locationfound', onLocationFound);
